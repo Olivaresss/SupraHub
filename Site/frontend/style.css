@@ -1,0 +1,170 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-image: url('NurbugringPist.png'); /* Caminho para a imagem */
+    background-size: cover; /* Faz a imagem cobrir todo o header */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Impede que a imagem se repita */
+    height: 200px; /* Ajuste a altura conforme necessário */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: 'Jolly Lodger', cursive;
+    font-size: 4.5em; /* Tamanho do texto */
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay com opacidade de 50% */
+    z-index: 1;
+}
+
+header h1 {
+    position: relative;
+    z-index: 2; /* Garante que o texto fique acima do overlay */
+    margin: 0;
+}
+
+/* Navegação */
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    padding: 15px 0;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ddd;
+}
+
+/* Imagem principal */
+.main-image {
+    background-image: url('ToyotaSupraPrincipal.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    white-space: nowrap; /* Impede a quebra de linha */
+    color: white;
+}
+
+/* Conteúdo principal */
+.content {
+    padding: 20px;
+}
+
+.content h1 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.content p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* Assinatura */
+.subscription {
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.subscription a {
+    color: #ff5722;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Botões */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.button {
+    padding: 15px 25px;
+    border: 1px solid #333;
+    background-color: #ff5722;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: #e64a19;
+}
+
+/* Comentários */
+.comments {
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.comment {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.comment p {
+    margin-bottom: 5px;
+}
+
+/* Rodapé */
+footer {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer a {
+    color: #ff5722;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    color: #ddd;
+}
