@@ -39,6 +39,7 @@ header {
     letter-spacing: 5px;
     text-transform: uppercase;
     position: relative;
+    box-shadow: inline 0 -10px 9px rgba(0, 0, 0, 0.1), 0 8px 9px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
@@ -290,19 +291,10 @@ button:active {
 }
 
 /* Comentários */
-.comments {
-    padding: 20px;
-    background-color: #f4f4f4;
-}
-
-.comment {
-    margin-bottom: 15px;
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-}
-
-.comment p {
-    margin-bottom: 5px;
+.comment-main {
+    width: 600px;
+    height: 60px;
+    padding: 105px;
 }
 
 /* Rodapé */
