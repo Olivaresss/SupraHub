@@ -111,7 +111,7 @@ nav a:hover {
     color: black;
     display: flex;
     margin-left: 190px;
-    margin-top: 40px;
+    margin-top: 20px;
     word-spacing: 2px;
     line-height: 1.5;
 }
@@ -139,6 +139,7 @@ nav a:hover {
 .image-mk1 {
     margin-left: 188px;
     margin-top: -10px;
+    height: auto;
 }
 
 .description-mk1 {
@@ -160,7 +161,8 @@ nav a:hover {
 
 .image-mk2 {
     margin-left: 188px;
-    width: 20%;
+    margin-top: -15px;
+    height: auto;
 }
 
 .description-mk2 {
@@ -183,6 +185,7 @@ nav a:hover {
 .image-mk3 {
     margin-left: 188px;
     height: 150px;
+    margin-top: -15px;
 }
 
 .description-mk3 {
@@ -222,6 +225,7 @@ nav a:hover {
     margin-left: 188px;
     width: 400px;
     height: 400px;
+    margin-top: -15px;
 }
 
 .description-mk4 {
@@ -244,6 +248,7 @@ nav a:hover {
 .image-mk5 {
     margin-left: 188px;
     height: 150px;
+    margin-top: -15px;
 }
 
 .description-mk5 {
@@ -267,6 +272,7 @@ nav a:hover {
 .price-mk4 {
     margin-left: 188px;
     height: 150px;
+    margin-top: -15px;
 }
 
 .description-price-mk4 {
@@ -289,6 +295,7 @@ nav a:hover {
 .image-mk4-tuning {
     margin-left: 188px;
     height: 150px;
+    margin-top: -15px;
 }
 
 .description-mk4-tuning {
@@ -300,3 +307,40 @@ nav a:hover {
     line-height: 1.5;
     margin-top: 270px;
 }
+
+.tittle-competitor-mk4 {
+    margin: 30px;
+    margin-left: 188px;
+    color: black;
+    margin-top: 80px;
+}
+
+.image-competitor-mk4 {
+    margin-left: 188px;
+    height: 150px;
+    margin-top: -15px;
+}
+
+.description-competitor-mk4 {
+    font-size: 20px;
+    color: black;
+    display: flex;
+    margin-left: 190px;
+    word-spacing: 2px;
+    line-height: 1.5;
+    margin-top: 360px;
+}
+
+.tittle-competitor-rx7 {
+    margin: 30px;
+    margin-left: 188px;
+    color: black;
+    margin-top: 80px;
+}
+
+.image-competitor-rx7 {
+    margin-left: 188px;
+    height: 150px;
+    margin-top: -15px;
+}
+
