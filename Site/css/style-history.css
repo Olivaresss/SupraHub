@@ -1,0 +1,302 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    overflow-x: hidden;
+}
+
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-image: url('../assets/NurbugringPist.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: 'Jolly Lodger', cursive;
+    font-size: 4.5em;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+header h1 {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+}
+
+/* Navegação */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: black;
+    height: 60px;
+}
+
+.nav-items {
+    display: flex;
+    gap: 40px;
+    margin-left: 30px;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ddd;
+}
+
+.content-area {
+    width: 75%;
+    height: 500px;
+    margin: 30px auto;
+    background-color: #dadada;
+    display: flex;
+    border-radius: 5px;
+}
+
+.left-conteiner {
+    flex: 1;
+    background-color: #dadada;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.main-tittle {
+    font-size: 40px;
+    color: black;
+    font-weight: 750;
+}
+
+.right-conteiner {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 100px;
+}
+
+.history-image {
+    height: 100%;
+    display: flex;
+}
+
+.introduction-content {
+    font-size: 20px;
+    color: black;
+    display: flex;
+    margin-left: 190px;
+    margin-top: 40px;
+    word-spacing: 2px;
+    line-height: 1.5;
+}
+
+.tittle-history-models-mk1 {
+    margin: 30px;
+    margin-left: 188px;
+    color: black;
+    font-size: 20px;
+}
+
+.subtittle-history-models {
+    margin: 30px;
+    margin-left: 188px;
+    color: black;
+}
+
+.model-mk1 {
+    margin: 30px;
+    margin-left: 188px;
+    color: black;
+    margin-top: -25px;
+}
+
+.image-mk1 {
+    margin-left: 188px;
+    margin-top: -10px;
+}
+
+.description-mk1 {
+    font-size: 20px;
+    color: black;
+    display: flex;
+    margin-left: 190px;
+    margin-top: 10px;
+    word-spacing: 2px;
+    line-height: 1.5;
+}
+
+.tittle-history-models-mk2 {
+    margin: 30px;
+    margin-left: 188px;
+    color: black;
+    margin-top: 100px;
+}
+
+.image-mk2 {
+    margin-left: 188px;
+    width: 20%;
+}
+
+.description-mk2 {
+    font-size: 20px;
+    color: black;
+    display: flex;
+    margin-left: 190px;
+    margin-top: 10px;
+    word-spacing: 2px;
+    line-height: 1.5;
+}
+
+.tittle-history-models-mk3 {
+    margin: 30px;
+    margin-left: 188px;
+    color: black;
+    margin-top: 100px;
+}
+
+.image-mk3 {
+    margin-left: 188px;
+    height: 150px;
+}
+
+.description-mk3 {
+    font-size: 20px;
+    color: black;
+    display: flex;
+    margin-left: 190px;
+    margin-top: 10px;
+    word-spacing: 2px;
+    line-height: 1.5;
+    margin-top: 430px;
+}
+
+.description-topicos-mk3 {
+    font-size: 20px;
+    color: black;
+    display: flex;
+    margin-left: 190px;
+    margin-top: -20px;
+}
+
+.description2-topicos-mk3 {
+    font-size: 20px;
+    color: black;
+    display: flex;
+    margin-left: 190px;
+}
+
+.tittle-history-models-mk4 {
+    margin: 30px;
+    margin-left: 188px;
+    color: black;
+    margin-top: 100px;
+}
+
+.image-mk4 {
+    margin-left: 188px;
+    width: 400px;
+    height: 400px;
+}
+
+.description-mk4 {
+    font-size: 20px;
+    color: black;
+    display: flex;
+    margin-left: 190px;
+    word-spacing: 2px;
+    line-height: 1.5;
+    margin-top: 150px;
+}
+
+.tittle-history-models-mk5 {
+    margin: 30px;
+    margin-left: 188px;
+    color: black;
+    margin-top: 100px;
+}
+
+.image-mk5 {
+    margin-left: 188px;
+    height: 150px;
+}
+
+.description-mk5 {
+    font-size: 20px;
+    color: black;
+    display: flex;
+    margin-left: 190px;
+    margin-top: 10px;
+    word-spacing: 2px;
+    line-height: 1.5;
+    margin-top: 500px;
+}
+
+.price-models {
+    margin: 30px;
+    margin-left: 188px;
+    color: black;
+    margin-top: 100px;
+}
+
+.price-mk4 {
+    margin-left: 188px;
+    height: 150px;
+}
+
+.description-price-mk4 {
+    font-size: 20px;
+    color: black;
+    display: flex;
+    margin-left: 190px;
+    word-spacing: 2px;
+    line-height: 1.5;
+    margin-top: 320px;
+}
+
+.tittle-tuning-mk4 {
+    margin: 30px;
+    margin-left: 188px;
+    color: black;
+    margin-top: 100px;
+}
+
+.image-mk4-tuning {
+    margin-left: 188px;
+    height: 150px;
+}
+
+.description-mk4-tuning {
+    font-size: 20px;
+    color: black;
+    display: flex;
+    margin-left: 190px;
+    word-spacing: 2px;
+    line-height: 1.5;
+    margin-top: 270px;
+}
