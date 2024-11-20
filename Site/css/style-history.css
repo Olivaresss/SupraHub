@@ -115,6 +115,8 @@ nav a:hover {
     margin-top: 20px;
     word-spacing: 2px;
     line-height: 1.5;
+    text-align: justify;
+    width: 67%;
 }
 
 .all {
@@ -166,6 +168,8 @@ nav a:hover {
     margin-top: 10px;
     word-spacing: 2px;
     line-height: 1.5;
+    text-align: justify;
+    width: 67%;
 }
 
 .tittle-history-models-mk2 {
@@ -189,6 +193,8 @@ nav a:hover {
     margin-top: 10px;
     word-spacing: 2px;
     line-height: 1.5;
+    text-align: justify;
+    width: 67%;
 }
 
 .tittle-history-models-mk3 {
@@ -213,6 +219,8 @@ nav a:hover {
     word-spacing: 2px;
     line-height: 1.5;
     margin-top: 250px;
+    text-align: justify;
+    width: 67%;
 }
 
 .description-topicos-mk3 {
@@ -251,6 +259,8 @@ nav a:hover {
     margin-left: 190px;
     word-spacing: 2px;
     line-height: 1.5;
+    text-align: justify;
+    width: 67%;
 }
 
 .tittle-history-models-mk5 {
@@ -275,6 +285,8 @@ nav a:hover {
     word-spacing: 2px;
     line-height: 1.5;
     margin-top: 250px;
+    text-align: justify;
+    width: 67%;
 }
 
 .price-models {
@@ -298,6 +310,8 @@ nav a:hover {
     word-spacing: 2px;
     line-height: 1.5;
     margin-top: 250px;
+    text-align: justify;
+    width: 67%;
 }
 
 .tittle-tuning-mk4 {
@@ -321,6 +335,8 @@ nav a:hover {
     word-spacing: 2px;
     line-height: 1.5;
     margin-top: 270px;
+    text-align: justify;
+    width: 67%;
 }
 
 .tittle-competitor-mk4 {
@@ -344,6 +360,8 @@ nav a:hover {
     word-spacing: 2px;
     line-height: 1.5;
     margin-top: 250px;
+    text-align: justify;
+    width: 67%;
 }
 
 .tittle-competitor-rx7 {
@@ -367,6 +385,8 @@ nav a:hover {
     word-spacing: 2px;
     line-height: 1.5;
     margin-top: 250px;
+    text-align: justify;
+    width: 67%;
 }
 
 .tittle-granturismo {
@@ -390,6 +410,8 @@ nav a:hover {
     word-spacing: 2px;
     line-height: 1.5;
     margin-top: 250px;
+    text-align: justify;
+    width: 67%;
 }
 
 .depoiments {
@@ -438,6 +460,32 @@ h1 {
 p {
     margin-top: 20px;
 }
+
+/* From Uiverse.io by Amikas */ 
+.button {
+    background-color: #333;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-size: 17px;
+  }
+  
+  .button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    background-color: rgb(128, 95, 247);
+  }
+  
+  .button:active {
+    transform: translateY(0.5em);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  }
+
+
 
 footer {
     background-color: black;
