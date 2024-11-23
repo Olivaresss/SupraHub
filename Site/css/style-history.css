@@ -22,6 +22,7 @@ header {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
     height: 200px;
     display: flex;
     align-items: center;
@@ -84,7 +85,7 @@ nav a:hover {
     align-items: center;
     justify-content: center;
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .main-tittle {
@@ -448,6 +449,7 @@ h1 {
 .card .user {
     width: 100px;
     height: 100px;
+    object-fit: cover;
     border-radius: 50%;
     margin-bottom: 15px;
 }
@@ -461,9 +463,8 @@ p {
     margin-top: 20px;
 }
 
-/* From Uiverse.io by Amikas */ 
 .button {
-    background-color: #333;
+    background-color: red;
     color: #fff;
     padding: 12px 24px;
     border: none;
@@ -477,7 +478,7 @@ p {
   .button:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-    background-color: rgb(128, 95, 247);
+    background-color: rgb(13, 11, 20);
   }
   
   .button:active {
@@ -495,7 +496,7 @@ footer {
 }
 
 footer a {
-    color: purple;
+    color: red;
     text-decoration: none;
     margin: 0 10px;
 }
