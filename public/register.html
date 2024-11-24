@@ -9,7 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link href="https://fonts.googleapis.com/css2?family=Jolly+Lodger&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="./icon/moon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../css/style-register.css">
+    <link rel="stylesheet" href="./css/style-register.css">
 </head>
 
 <body>
@@ -161,5 +161,33 @@
             });
             return;
         }
+        console.log(usuario)
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                usuarioServer: usuario,
+                emailServer: email,
+                senhaServer: senha,
+            }),
+        })
+
+
+        Swal.fire({
+            text: "Cadastro realizado com sucesso! Redirecionando para tela de Login..."
+        })
+
+
+        setTimeout(() => {
+            window.location = "login.html";
+        }, "2000");
+
+
+
+        return false;
     }
 </script>
