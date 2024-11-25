@@ -37,6 +37,10 @@
                 <div class="link2">
                     <a href="recoverPassword.html">Esqueceu sua senha?</a>
                 </div>
+                <div class="link2">
+                    <a href="register.html">Ainda não tem uma conta? Cadastre-se gratuitamente</a>
+
+                </div>
             </div>
         </div>
     </div>
@@ -55,7 +59,7 @@
             cardErro.style.display = "block"
             return false;
         }
-        
+
 
         console.log("FORM LOGIN: ", emailVar);
         console.log("FORM SENHA: ", senhaVar);
@@ -79,8 +83,8 @@
                     console.log(json);
                     console.log(JSON.stringify(json));
                     sessionStorage.EMAIL_USUARIO = json.email;
-                    sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.idUsuario;
+                    sessionStorage.NOME_USUARIO = json.username;
+                    sessionStorage.ID_USUARIO = json.id;
 
                     setTimeout(function () {
                         window.location = "history.html";

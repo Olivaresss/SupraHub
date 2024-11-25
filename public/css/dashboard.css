@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000; /* Fundo preto */
+    color: white;
+    display: flex;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* Barra lateral esquerda */
+.sidebar {
+    width: 250px;
+    background-color: #1a1a1a; /* Fundo cinza escuro */
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar-header {
+    text-align: center;
+}
+
+.sidebar-header h2 {
+    font-size: 20px;
+    color: white; /* Vermelho */
+}
+
+.suprahub {
+    font-family: 'Jolly Lodger', cursive;
+    font-size: 50px;
+    color: #a40000;
+}
+
+#username {
+    font-weight: bold;
+}
+
+.logout-btn {
+    margin-top: 20px;
+    background-color: #a40000;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Conteúdo principal à direita */
+.main-content {
+    margin-left: 270px; /* Deixando espaço para a sidebar */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Maior espaço entre os gráficos */
+    width: calc(100% - 270px); /* Ajuste a largura para que ocupe o restante da tela */
+    overflow: auto;
+}
+
+/* Cards de informações */
+.info-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.card {
+    background-color: #1a1a1a;
+    width: 48%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.card h3 {
+    color: #a40000;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Área dos gráficos */
+.graphs-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+/* Estilos para os gráficos */
+.graph-container {
+    background-color: #1a1a1a;
+    width: 48%;  /* Aumenta a largura dos gráficos */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 450px;  /* Tamanho maior */
+    overflow: hidden;
+}
+
+/* Título do gráfico */
+h1 {
+    text-align: center;
+    font-size: 18px;
+    color: #a40000; /* Vermelho */
+    margin-bottom: 10px;
+}
+
+/* Gráfico específico */
+canvas {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 350px; /* Aumenta a altura para gráficos */
+}
