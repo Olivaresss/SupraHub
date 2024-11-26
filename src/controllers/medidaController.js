@@ -1,5 +1,27 @@
 var medidaModel = require("../models/medidaModel");
 
+
+
+function buscarUltimosDadosGrafico(req, res) {
+
+    console.log(`Entrou no buscarDados de carro`);
+
+    medidaModel.coletarDadosGrafico().then(function (resultado) {
+        console.log('controller')
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar as ultimas medidas.", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+
+
+
 function buscarUltimasMedidas(req, res) {
 
     const limite_linhas = 7;
@@ -41,8 +63,10 @@ function buscarMedidasEmTempoReal(req, res) {
     });
 }
 
+
+
 module.exports = {
     buscarUltimasMedidas,
-    buscarMedidasEmTempoReal
-
+    buscarMedidasEmTempoReal,
+    buscarUltimosDadosGrafico
 }

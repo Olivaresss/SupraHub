@@ -13,20 +13,21 @@
 <body>
     <div class="sidebar">
         <div class="sidebar-header">
-            <h2>Bem-vindo ao <p class="suprahub">SupraHub <br> Dashboard</p></h2>
+            <h2> <p class="bem-vindo">Bem-vindo ao</p> <p class="suprahub">SupraHub <br> Dashboard</p>
+            </h2>
         </div>
-        <button class="logout-btn">Sair</button>
+        <button onclick="window.location.href='../history.html'" class="logout-btn">Sair</button>
     </div>
 
     <div class="main-content">
         <div class="info-cards">
             <div class="card">
                 <h3>Modelo Mais Popular</h3>
-                <p id="most-popular">MK4</p>
+                <p id="most_popular"></p>
             </div>
             <div class="card">
                 <h3>Modelo Menos Popular</h3>
-                <p id="least-popular">MK6</p>
+                <p id="least_popular">MK6</p>
             </div>
         </div>
 
@@ -47,100 +48,98 @@
     </div>
 
     <script>
-        
-        // Dados para o gráfico de barras
-        const popularityBarChart = new Chart(document.getElementById('popularityBarChart'), {
-            type: 'bar',
-            data: {
-                labels: ['MK1', 'MK2', 'MK3', 'MK4', 'MK5', 'MK6'],
-                datasets: [{
-                    label: 'Porcentagem de Respostas',
-                    data: [9.68, 16.13, 6.45, 41.94, 22.58, 3.23], 
-                    backgroundColor: ['#ff0000', '#ffcc00', '#ff9900', '#0077ff', '#00ff00', '#6600cc'],
-                    borderColor: ['#ff0000', '#ffcc00', '#ff9900', '#0077ff', '#00ff00', '#6600cc'],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        ticks: {
-                            callback: function(value) {
-                                return value + '%'; 
-                            }
-                        }
-                    }
+
+
+        function obterDadosGrafico() {
+           //if (proximaAtualizacao != undefined) {
+             //   clearTimeout(proximaAtualizacao);
+          //}
+            fetch(`/medidas/tempo-real`, { cache: 'no-store' }).then(function (response) {
+                console.log(response)
+                if (response.ok) {
+                    response.json().then(function (resposta) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                        plotarGrafico(resposta)
+                        resposta.reverse();
+                       // plotarGrafico(resposta, idAquario);
+                    });
+
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
                 }
-            }
-        });
+            })
+                .catch(function (error) {
+                    console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+                });
+        }
+
+
 
         // Dados para o gráfico de linhas com preços de importação dos modelos
         const priceLineChart = new Chart(document.getElementById('priceLineChart'), {
             type: 'line',
             data: {
-                labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'], 
+                labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
                 datasets: [
                     {
                         label: 'MK1',
-                        data: [120000, 130000, 140000, 150000, 160000, 165000, 170000, 180000, 190000, 200000, 205000, 210000], 
+                        data: [120000, 130000, 140000, 150000, 160000, 165000, 170000, 180000, 190000, 200000, 205000, 210000],
                         borderColor: 'red',
                         fill: true,
-                        tension: 0.4, 
-                        borderWidth: 2, 
-                        pointBackgroundColor: 'red', 
-                        pointRadius: 4 
+                        tension: 0.4,
+                        borderWidth: 2,
+                        pointBackgroundColor: 'red',
+                        pointRadius: 4
                     },
                     {
                         label: 'MK2',
-                        data: [150000, 160000, 170000, 180000, 190000, 200000, 210000, 220000, 230000, 240000, 250000, 260000], 
+                        data: [150000, 160000, 170000, 180000, 190000, 200000, 210000, 220000, 230000, 240000, 250000, 260000],
                         borderColor: 'white',
                         fill: true,
-                        tension: 0.4, 
-                        borderWidth: 2, 
-                        pointBackgroundColor: 'white', 
-                        pointRadius: 4 
+                        tension: 0.4,
+                        borderWidth: 2,
+                        pointBackgroundColor: 'white',
+                        pointRadius: 4
                     },
                     {
                         label: 'MK3',
-                        data: [200000, 210000, 220000, 230000, 240000, 250000, 260000, 270000, 280000, 290000, 300000, 310000], 
+                        data: [200000, 210000, 220000, 230000, 240000, 250000, 260000, 270000, 280000, 290000, 300000, 310000],
                         borderColor: '#ffcc00',
                         fill: true,
-                        tension: 0.4, 
-                        borderWidth: 2, 
-                        pointBackgroundColor: '#ffcc00', 
-                        pointRadius: 4 
+                        tension: 0.4,
+                        borderWidth: 2,
+                        pointBackgroundColor: '#ffcc00',
+                        pointRadius: 4
                     },
                     {
                         label: 'MK4',
-                        data: [250000, 270000, 290000, 300000, 310000, 320000, 330000, 340000, 350000, 360000, 370000, 380000], 
+                        data: [250000, 270000, 290000, 300000, 310000, 320000, 330000, 340000, 350000, 360000, 370000, 380000],
                         borderColor: '#0077ff',
                         fill: true,
-                        tension: 0.4, 
-                        borderWidth: 2, 
-                        pointBackgroundColor: '#0077ff', 
-                        pointRadius: 4 
+                        tension: 0.4,
+                        borderWidth: 2,
+                        pointBackgroundColor: '#0077ff',
+                        pointRadius: 4
                     },
                     {
                         label: 'MK5',
-                        data: [350000, 370000, 390000, 400000, 410000, 420000, 430000, 440000, 450000, 460000, 470000, 480000], 
+                        data: [350000, 370000, 390000, 400000, 410000, 420000, 430000, 440000, 450000, 460000, 470000, 480000],
                         borderColor: '#00ff00',
                         fill: true,
-                        tension: 0.4, 
-                        borderWidth: 2, 
-                        pointBackgroundColor: '#00ff00', 
-                        pointRadius: 4 
+                        tension: 0.4,
+                        borderWidth: 2,
+                        pointBackgroundColor: '#00ff00',
+                        pointRadius: 4
                     },
                     {
                         label: 'MK6',
                         data: [500000, 500000, 500000, 500000, 500000, 500000, 500000, 500000, 500000, 500000, 500000, 500000],
                         borderColor: 'orange',
                         fill: true,
-                        tension: 0.4, 
-                        borderWidth: 2, 
-                        pointBackgroundColor: 'orange', 
-                        pointRadius: 4 
+                        tension: 0.4,
+                        borderWidth: 2,
+                        pointBackgroundColor: 'orange',
+                        pointRadius: 4
                     }
                 ]
             },
@@ -162,6 +161,77 @@
                 }
             }
         });
+
+
+        obterDadosGrafico()
+
+        function plotarGrafico(resposta){
+            let dados = {
+                labels: ['MK1', 'MK2', 'MK3', 'MK4', 'MK5', 'MK6'],
+                datasets: [{
+                    label: 'Popularidade',
+                    data: [],
+                    backgroundColor: ['#a40000', '#a40000', '#a40000', '#a40000', '#a40000', '#a40000'],
+                    borderColor: ['#a40000', '#a40000', '#a40000', '#a40000', '#a40000', '#a40000'],
+                    borderWidth: 1
+                }]
+            }
+
+            var maisEscolhido = ``
+            var menosEscolhido = ``
+            var maximoValor = resposta[0][`MK1`]
+            var minimoValor = resposta[0][`MK1`]
+
+            for (i = 1; i <= 6; i++) {
+            // para grafico
+            var mx = resposta[0][`MK${i}`]
+            // var registro = resposta[i];
+            
+            console.log(mx)
+            console.log(dados.datasets)
+            dados.datasets[0].data.push(mx);
+                // para kpi
+                if(i !=6 ){
+                    if(maximoValor < resposta[0][`MK${i+1}`]){
+                        maximoValor = resposta[0][`MK${i+1}`]
+                        maisEscolhido = `MK${i+1}`
+                    }
+
+                    if(minimoValor > resposta[0][`MK${i+1}`]){
+                        minimoValor = resposta[0][`MK${i+1}`]
+                        menosEscolhido = `MK${i+1}`
+                    }
+                }           
+            }
+
+            most_popular.innerHTML = maisEscolhido
+            least_popular.innerHTML = menosEscolhido
+        
+
+            var config =  {
+                type: 'bar',
+                data: dados,
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function (value) {
+                                    return value; 
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+
+            // Dados para o gráfico de barras
+            const popularityBarChart = new Chart(document.getElementById('popularityBarChart'), config); 
+        }
+        
+            
     </script>
 </body>
 

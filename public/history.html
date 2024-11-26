@@ -23,6 +23,7 @@
             <a href="#rival">Concorrentes</a>
             <a href="./dashboard/dashboard.html">Dashboard</a>
             <a href="#pesquisa">Pesquisa</a>
+            <a href="#personalizacao">Personalização</a>
 
         </div>
     </nav>
@@ -160,27 +161,6 @@
                 característica faz dele uma lenda no mundo do automobilismo e no mercado de carros modificados.</p>
         </div>
 
-        <div class="tittle-tuning-mk4">
-            <h2>Tuning e Personalização</h2>
-        </div>
-
-        <div class="image-mk4-tuning">
-            <img src="./assets/imgs/mk4-tuning.jpg" alt="">
-        </div>
-
-        <div class="description-mk4-tuning">
-            <p>Os entusiastas JDM têm uma verdadeira paixão por modificar seus Supras para extrair o máximo de
-                desempenho e
-                personalização estética. O Toyota Supra é frequentemente escolhido para projetos de tuning devido à
-                sua
-                robustez e versatilidade. Atualizações comuns incluem melhorias no motor, como a instalação de
-                turbocompressores maiores, intercoolers e sistemas de escape de alta performance. A suspensão é
-                ajustada
-                para proporcionar melhor manobrabilidade e aderência, enquanto rodas personalizadas e kits
-                aerodinâmicos
-                são adicionados para melhorar a aparência e a funcionalidade.
-            </p>
-        </div>
         <div id="rival">
 
             <div class="tittle-competitor-mk4">
@@ -253,6 +233,50 @@
                 continuo mandando ver!"
             </p>
         </div>
+        <div class="tittle-tuning-mk4">
+            <h2>Tuning e Personalização</h2>
+        </div>
+        
+        <div class="image-mk4-tuning">
+            <img src="./assets/imgs/mk4-tuning.jpg" alt="">
+        </div>
+        
+        <div class="description-mk4-tuning">
+            <p>Os entusiastas JDM têm uma verdadeira paixão por modificar seus Supras para extrair o máximo de
+                desempenho e
+                personalização estética. O Toyota Supra é frequentemente escolhido para projetos de tuning devido à
+                sua
+                robustez e versatilidade. Atualizações comuns incluem melhorias no motor, como a instalação de
+                turbocompressores maiores, intercoolers e sistemas de escape de alta performance. A suspensão é
+                ajustada
+                para proporcionar melhor manobrabilidade e aderência, enquanto rodas personalizadas e kits
+                aerodinâmicos
+                são adicionados para melhorar a aparência e a funcionalidade.
+            </p>
+            <div id="personalizacao"></div>
+        </div>
+
+
+        <div class="modifications">
+            <h2>Personalize o seu Toyota Supra MK4</h2>
+            <label for="modification-select">Escolha a modificação:</label>
+            <select id="modification-select" onchange="adicionarModificacao()">
+                <option value="" disabled selected>Selecione uma modificação</option>
+                <option value="350">Turbocharger (+350cv)</option>
+                <option value="20">Escape Esportivo (+20cv)</option>
+                <option value="65">Reprogramação de ECU (+65cv)</option>
+                <option value="15">Intercooler Maior (+15cv)</option>
+                <option value="150">Kit Nitro (+150cv)</option>
+                <option value="350">TurboCompressor (+350cv)</option>
+            </select>
+        
+            <p id="current-power">Potência atual: <strong>220cv</strong></p>
+            <ul id="modifications-list"></ul>
+        
+            <button id="reset-button" onclick="resetarModificacoes()">Reiniciar Modificações</button>
+        </div>
+        
+
         <div id="pesquisa">
             <div class="depoiments">
                 <h1>Qual modelo do Toyota Supra você prefere?</h1>
@@ -344,9 +368,37 @@
 
 </html>
 <script>
-    function verificarCarro(carro) {
-        alert(carro)
-    }
+
+var potenciaBase = 220;
+var potenciaAtual = potenciaBase;
+var modificacoes = [];
+
+function adicionarModificacao() {
+    const select = document.getElementById("modification-select");
+    const modificacaoSelecionada = select.options[select.selectedIndex];
+    const valorModificacao = parseInt(modificacaoSelecionada.value);
+    const descricaoModificacao = modificacaoSelecionada.text;
+
+    if (!valorModificacao) return;
+
+    potenciaAtual += valorModificacao;
+    modificacoes.push(descricaoModificacao);
+
+    document.getElementById("current-power").innerHTML = `Potência atual: <strong>${potenciaAtual}cv</strong>`;
+    const list = document.getElementById("modifications-list");
+    const listItem = document.createElement("li");
+    listItem.textContent = descricaoModificacao;
+    list.appendChild(listItem);
+    select.selectedIndex = 0;
+}
+
+function resetarModificacoes() {
+    potenciaAtual = potenciaBase;
+    modificacoes = [];
+
+    document.getElementById("current-power").innerHTML = `Potência atual: <strong>${potenciaBase}cv</strong>`;
+    document.getElementById("modifications-list").innerHTML = "";
+}
 
     function verificarCarro(carro) {
 
